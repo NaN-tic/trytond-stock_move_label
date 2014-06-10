@@ -1,0 +1,39 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:stock.move,label_party:"
+msgid "Party"
+msgstr "Tercero"
+
+msgctxt "field:stock.move,label_use_date:"
+msgid "Use date"
+msgstr "Fecha de caducidad"
+
+msgctxt "jasper:stock.move.label:"
+msgid "Best Before"
+msgstr "Consumir preferentement"
+
+msgctxt "jasper:stock.move.label:"
+msgid "Lot"
+msgstr "Lote"
+
+msgctxt "jasper:stock.move.label:"
+msgid "Package"
+msgstr "Paquete"
+
+msgctxt "jasper:stock.move.label:"
+msgid "Quantity:"
+msgstr "Cantidad"
+
+msgctxt "model:ir.action,name:report_stock_move_label"
+msgid "Stock Move Label"
+msgstr "Etiqueta"
+
+msgctxt "view:stock.move:"
+msgid "Label"
+msgstr "Etiqueta"
+
+msgctxt "view:stock.move:"
+msgid "Print Label"
+msgstr "Imprimir etiqueta"

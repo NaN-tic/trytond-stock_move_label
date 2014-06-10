@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="move_view_form">
+            <field name="model">stock.move</field>
+            <field name="inherit" ref="stock.move_view_form"/>
+            <field name="name">move_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="move_view_tree">
+            <field name="model">stock.move</field>
+            <field name="inherit" ref="stock.move_view_tree"/>
+            <field name="name">move_tree</field>
+        </record>
+
+        <record model="ir.action.report" id="report_stock_move_label">
+            <field name="name">Stock Move Label</field>
+            <field name="model">stock.move</field>
+            <field name="report_name">stock.move.label</field>
+            <field name="report">stock_move_label/label.jrxml</field>
+        </record>
+        <record model="ir.action.keyword" id="report_stock_move_label_keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">stock.move,-1</field>
+            <field name="action" ref="report_stock_move_label"/>
+        </record>
+    </data>
+</tryton>
+

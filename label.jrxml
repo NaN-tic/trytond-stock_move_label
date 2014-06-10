@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="product_label" language="groovy" pageWidth="294" pageHeight="210" columnWidth="284" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5" uuid="1104503c-587b-4003-b519-cfddbf56d6e8">
+	<property name="ireport.zoom" value="2.853116706110003"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="OPENERP_RELATIONS" value="[]"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString language="xPath">
+		<![CDATA[/data/record]]>
+	</queryString>
+	<field name="lot" class="java.lang.String">
+		<fieldDescription><![CDATA[lot/number]]></fieldDescription>
+	</field>
+	<field name="use_date" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[label_use_date]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.String">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="quantity" class="java.lang.Number">
+		<fieldDescription><![CDATA[quantity]]></fieldDescription>
+	</field>
+	<field name="default_code" class="java.lang.String">
+		<fieldDescription><![CDATA[product/code]]></fieldDescription>
+	</field>
+	<field name="lang" class="java.lang.String">
+		<fieldDescription><![CDATA[label_party/lang/code]]></fieldDescription>
+	</field>
+	<field name="product_name" class="java.lang.String">
+		<fieldDescription><![CDATA[product/rec_name]]></fieldDescription>
+	</field>
+	<field name="uom" class="java.lang.Object">
+		<fieldDescription><![CDATA[uom/name]]></fieldDescription>
+	</field>
+	<field name="shipment_id" class="java.lang.Number">
+		<fieldDescription><![CDATA[shipment/id]]></fieldDescription>
+	</field>
+	<field name="package" class="java.lang.String">
+		<fieldDescription><![CDATA[package/code]]></fieldDescription>
+	</field>
+	<variable name="L" class="java.util.Locale">
+		<variableExpression><![CDATA[$F{lang} != null && $F{lang}.length() == 5 ? new Locale( $F{lang}.substring(0,2), $F{lang}.substring(3,5) ) : ( $F{lang} != null && $F{lang}.length() == 2 ? new Locale( $F{lang}.substring(0,2) ) : $P{REPORT_LOCALE} )]]></variableExpression>
+		<initialValueExpression><![CDATA[$F{lang} != null && $F{lang}.length() == 5 ? new Locale( $F{lang}.substring(0,2), $F{lang}.substring(3,5) ) : ( $F{lang} != null && $F{lang}.length() == 2 ? new Locale( $F{lang}.substring(0,2) ) : $P{REPORT_LOCALE} )]]></initialValueExpression>
+	</variable>
+	<group name="Move" isStartNewPage="true" isResetPageNumber="true">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+		<groupHeader>
+			<band height="61">
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement uuid="9cbafa4d-0922-4f52-9e60-9e1d1b724c9f" mode="Transparent" x="0" y="22" width="284" height="24" isRemoveLineWhenBlank="true" backcolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="9c7613d3-8186-4625-a3d5-8461646a9985" x="0" y="0" width="156" height="12">
+						<printWhenExpression><![CDATA[$F{lot} != "" && $F{lot} != null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[tr($V{L},"Lot") + ": " + $F{lot}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+					<reportElement uuid="3eb6da02-c048-47b2-a668-80c419ea04f1" positionType="Float" x="69" y="46" width="61" height="12" isRemoveLineWhenBlank="true"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{quantity} == null || $F{quantity} == 0 ?
+    1.0
+:
+    $F{quantity}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="e20d3da0-b669-4185-a9a3-584416099b4a" x="0" y="11" width="156" height="12">
+						<printWhenExpression><![CDATA[$F{use_date} != "" && $F{use_date} != null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[tr($V{L},"Best Before") + ": " + new SimpleDateFormat("dd/MM/yyyy").format($F{use_date})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="af51f00f-242a-4f88-bbd7-716878b63133" positionType="Float" x="0" y="46" width="69" height="12" isRemoveLineWhenBlank="true"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[tr($V{L},"Quantity:")]]></textFieldExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement uuid="a41a737e-95dd-40ed-a7f4-203c43e2622d" positionType="Float" x="132" y="46" width="80" height="12" isRemoveLineWhenBlank="true"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{uom}.get($F{lang})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="f5e48ae0-f4e4-4f92-8f12-1958f9791940" x="156" y="0" width="128" height="22">
+						<printWhenExpression><![CDATA[$F{lot} != "" && $F{lot} != null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[tr($V{L},"Package") + ": " + $F{package}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+</jasperReport>

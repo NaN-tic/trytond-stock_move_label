@@ -5,10 +5,9 @@ from trytond.pool import PoolMeta
 from trytond.modules.jasper_reports.jasper import JasperReport
 
 __all__ = ['Move', 'MoveLabel']
-__metaclass__ = PoolMeta
 
 
-class Move:
+class Move(metaclass=PoolMeta):
     __name__ = 'stock.move'
     label_party = fields.Function(fields.Many2One('party.party', 'Party'),
         'get_label_party')

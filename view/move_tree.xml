@@ -3,6 +3,6 @@
      copyright notices and license terms. -->
 <data>
     <xpath expr="/tree" position="inside">
-        <button name="print_label" string="Print Label"/>
+        <button name="print_label"/>
     </xpath>
 </data>

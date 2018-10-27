@@ -3,6 +3,6 @@
       copyright notices and license terms. -->
 <data>
     <xpath expr="/form/field[@name='state']" position="after">
-        <button name="print_label" string="Label" colspan="2"/>
+        <button name="print_label" colspan="2"/>
     </xpath>
 </data>

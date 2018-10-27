@@ -15,6 +15,16 @@
             <field name="name">move_tree</field>
         </record>
 
+        <record model="ir.model.button" id="stock_move_print_label_button">
+            <field name="name">print_label</field>
+            <field name="string">Print Label</field>
+            <field name="model" search="[('model', '=', 'stock.move')]"/>
+        </record>
+        <record model="ir.model.button-res.group" id="stock_move_print_label_button_group_stock">
+            <field name="button" ref="stock_move_print_label_button"/>
+            <field name="group" ref="stock.group_stock"/>
+        </record>
+
         <record model="ir.action.report" id="report_stock_move_label">
             <field name="name">Stock Move Label</field>
             <field name="model">stock.move</field>

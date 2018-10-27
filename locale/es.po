@@ -10,19 +10,19 @@ msgctxt "field:stock.move,label_use_date:"
 msgid "Use date"
 msgstr "Fecha de caducidad"
 
-msgctxt "jasper:stock.move.label:"
+msgctxt "report:stock.move.label:"
 msgid "Best Before"
 msgstr "Consumir preferentement"
 
-msgctxt "jasper:stock.move.label:"
+msgctxt "report:stock.move.label:"
 msgid "Lot"
 msgstr "Lote"
 
-msgctxt "jasper:stock.move.label:"
+msgctxt "report:stock.move.label:"
 msgid "Package"
 msgstr "Paquete"
 
-msgctxt "jasper:stock.move.label:"
+msgctxt "report:stock.move.label:"
 msgid "Quantity:"
 msgstr "Cantidad"
 

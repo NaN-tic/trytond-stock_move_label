@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
@@ -9,6 +9,14 @@ msgstr "Tercero"
 msgctxt "field:stock.move,label_use_date:"
 msgid "Use date"
 msgstr "Fecha de caducidad"
+
+msgctxt "model:ir.action,name:report_stock_move_label"
+msgid "Stock Move Label"
+msgstr "Etiqueta"
+
+msgctxt "model:ir.model.button,string:stock_move_print_label_button"
+msgid "Print Label"
+msgstr "Imprimir etiqueta"
 
 msgctxt "report:stock.move.label:"
 msgid "Best Before"
@@ -25,10 +33,6 @@ msgstr "Paquete"
 msgctxt "report:stock.move.label:"
 msgid "Quantity:"
 msgstr "Cantidad"
-
-msgctxt "model:ir.action,name:report_stock_move_label"
-msgid "Stock Move Label"
-msgstr "Etiqueta"
 
 msgctxt "view:stock.move:"
 msgid "Label"

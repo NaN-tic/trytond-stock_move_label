@@ -30,6 +30,7 @@
             <field name="model">stock.move</field>
             <field name="report_name">stock.move.label</field>
             <field name="report">stock_move_label/label.jrxml</field>
+            <field name="template_extension">jrxml</field>
         </record>
         <record model="ir.action.keyword" id="report_stock_move_label_keyword">
             <field name="keyword">form_print</field>
@@ -38,4 +39,3 @@
         </record>
     </data>
 </tryton>
-

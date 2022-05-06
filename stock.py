@@ -2,6 +2,7 @@
 #copyright notices and license terms.
 from trytond.model import fields, ModelView
 from trytond.pool import PoolMeta
+from trytond.pyson import Eval
 from trytond.modules.jasper_reports.jasper import JasperReport
 
 __all__ = ['Move', 'MoveLabel']
@@ -9,7 +10,10 @@ __all__ = ['Move', 'MoveLabel']
 
 class Move(metaclass=PoolMeta):
     __name__ = 'stock.move'
-    label_party = fields.Function(fields.Many2One('party.party', 'Party'),
+    label_party = fields.Function(fields.Many2One('party.party', 'Party',
+            context={
+                'company': Eval('company'),
+            }, depends=['company']),
         'get_label_party')
     label_use_date = fields.Function(fields.Date('Use date'),
         'get_label_use_date')

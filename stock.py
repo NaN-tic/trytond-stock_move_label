@@ -12,7 +12,7 @@ class Move(metaclass=PoolMeta):
     __name__ = 'stock.move'
     label_party = fields.Function(fields.Many2One('party.party', 'Party',
             context={
-                'company': Eval('company'),
+                'company': Eval('company', -1),
             }, depends=['company']),
         'get_label_party')
     label_use_date = fields.Function(fields.Date('Use date'),

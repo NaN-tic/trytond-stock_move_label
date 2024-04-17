@@ -18,7 +18,7 @@
         <record model="ir.model.button" id="stock_move_print_label_button">
             <field name="name">print_label</field>
             <field name="string">Print Label</field>
-            <field name="model" search="[('model', '=', 'stock.move')]"/>
+            <field name="model">stock.move</field>
         </record>
         <record model="ir.model.button-res.group" id="stock_move_print_label_button_group_stock">
             <field name="button" ref="stock_move_print_label_button"/>
